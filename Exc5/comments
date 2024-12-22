@@ -1,0 +1,8 @@
+Вообще я поднимал поды и сервисы в minikube подобными скриптами:
+
+```sh
+kubectl run front-end-app --image=nginx --labels role=front-end --expose --port 80
+```
+
+но можно и yaml-ами через `kubectl apply -f ...yaml`
+файлики приложил
