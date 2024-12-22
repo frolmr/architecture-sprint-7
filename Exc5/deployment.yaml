@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-end-api
+  labels:
+    app: back-end-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back-end-api
+  template:
+    metadata:
+      labels:
+        app: back-end-api
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-back-end-api
+  labels:
+    app: admin-back-end-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-back-end-api
+  template:
+    metadata:
+      labels:
+        app: admin-back-end-api
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end
+  labels:
+    app: front-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      labels:
+        app: front-end
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-front-end
+  labels:
+    app: admin-front-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-front-end
+  template:
+    metadata:
+      labels:
+        app: admin-front-end
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
